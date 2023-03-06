@@ -11,11 +11,10 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${(props) => props.theme.background};
     color: ${(props) => props.theme['base-title']};
     -webkit-font-smoothing: antialiased;
-    padding: 0 10rem;
   }
 
   body, input , button {
-    font-family: 'Ballo 2', cursive;
+    font-family: 'Baloo 2', cursive;
     line-height: 1.3;
     font-weight: bold;
     font-size: 1.125rem;
