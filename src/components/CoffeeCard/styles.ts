@@ -53,8 +53,11 @@ export const CoffeeTypeContainer = styled.div`
 
 export const CoffeeFooterContainer = styled.div`
   display: flex;
+  width: 100%;
   margin-top: 2.063rem;
   color: ${(props) => props.theme['base-text']};
+
+  justify-content: space-between;
 
   p {
     font-family: 'Roboto', sans-serif;
@@ -67,5 +70,29 @@ export const CoffeeFooterContainer = styled.div`
     font-weight: 800;
     font-size: 1.5rem;
     line-height: 1.95rem;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+`
+
+export const ShoppingCartContainer = styled.div`
+  background: ${(props) => props.theme['purple-dark']};
+  display: flex;
+  padding: 0 0.5rem;
+  height: 100%;
+  border-radius: 6px;
+
+  :hover {
+    background: ${(props) => props.theme.purple};
+  }
+
+  transition: background 0.2s;
+
+  svg {
+    color: ${(props) => props.theme.white};
   }
 `

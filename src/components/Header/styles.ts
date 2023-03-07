@@ -41,6 +41,8 @@ export const CartContainer = styled.div`
   padding: 0.5rem;
   border-radius: 6px;
 
+  transition: background 0.2s;
+
   :hover {
     background: ${(props) => props.theme.yellow};
   }

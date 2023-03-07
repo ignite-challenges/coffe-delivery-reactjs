@@ -2,9 +2,12 @@ import {
   CoffeeContainer,
   CoffeeFooterContainer,
   CoffeeTypeContainer,
+  ShoppingCartContainer,
 } from './styles'
 
 import CoffeeImage from '../../assets/coffees/express-traditional.png'
+import { CoffeeCartInput } from '../CoffeeCartInput'
+import { ShoppingCart } from 'phosphor-react'
 
 export function CoffeeCard() {
   return (
@@ -21,6 +24,13 @@ export function CoffeeCard() {
           R${` `}
           <strong>9,90</strong>
         </p>
+
+        <div>
+          <CoffeeCartInput />
+          <ShoppingCartContainer>
+            <ShoppingCart size={22} weight={'fill'} />
+          </ShoppingCartContainer>
+        </div>
       </CoffeeFooterContainer>
     </CoffeeContainer>
   )
