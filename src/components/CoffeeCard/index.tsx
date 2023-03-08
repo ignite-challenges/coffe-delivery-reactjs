@@ -5,14 +5,17 @@ import {
   ShoppingCartContainer,
 } from './styles'
 
-import CoffeeImage from '../../assets/coffees/express-traditional.png'
+import CoffeeImage from '../../assets/products/express-traditional.png'
 import { CoffeeCartInput } from '../CoffeeCartInput'
 import { ShoppingCart } from 'phosphor-react'
 
 export function CoffeeCard() {
   return (
     <CoffeeContainer>
-      <img src={CoffeeImage} alt="Imagem meramente ilustrativa de um café" />
+      <img
+        src={CoffeeImage}
+        alt="Imagem meramente ilustrativa de um copo com café"
+      />
       <CoffeeTypeContainer>
         <label>tradicional</label>
       </CoffeeTypeContainer>

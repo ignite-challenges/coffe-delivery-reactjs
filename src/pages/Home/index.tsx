@@ -1,11 +1,10 @@
 import { ShoppingCart, Package, Timer, Coffee } from 'phosphor-react'
 
 import {
-  HomeContainer,
   SectionContainer,
   IconContainer,
   InfoContainer,
-  MainContainer,
+  ProductsContainer,
   CoffeeCardContainer,
 } from './styles'
 
@@ -16,7 +15,7 @@ import CoffeImage from '../../assets/coffe-main.png'
 
 export function Home() {
   return (
-    <HomeContainer>
+    <main>
       <SectionContainer backgroundImage={HomeBackground}>
         <InfoContainer>
           <strong>
@@ -54,7 +53,7 @@ export function Home() {
         </InfoContainer>
         <img src={CoffeImage} alt="Imagem de um cope de cafe com a logomarca" />
       </SectionContainer>
-      <MainContainer>
+      <ProductsContainer>
         <strong>Nossos cafés</strong>
         <CoffeeCardContainer>
           <CoffeeCard />
@@ -65,7 +64,7 @@ export function Home() {
           <CoffeeCard />
           <CoffeeCard />
         </CoffeeCardContainer>
-      </MainContainer>
-    </HomeContainer>
+      </ProductsContainer>
+    </main>
   )
 }

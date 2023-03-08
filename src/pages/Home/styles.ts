@@ -4,8 +4,6 @@ interface SectionContainerProps {
   backgroundImage: string
 }
 
-export const HomeContainer = styled.div``
-
 export const SectionContainer = styled.section<SectionContainerProps>`
   background-image: ${(props) => `url(${props.backgroundImage})`};
   padding: 5.75rem 10rem;
@@ -72,7 +70,7 @@ export const IconContainer = styled.div<IconContainerProps>`
   }
 `
 
-export const MainContainer = styled.main`
+export const ProductsContainer = styled.main`
   padding: 2rem 10rem;
 
   strong {
