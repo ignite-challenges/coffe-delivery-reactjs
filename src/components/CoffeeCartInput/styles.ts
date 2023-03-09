@@ -5,9 +5,8 @@ export const CartInputContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 0.5rem;
-  height: 100%;
-
+  padding: 0.5rem;
+  /* height: 100%; */
   border-radius: 6px;
 
   svg {
@@ -15,6 +14,12 @@ export const CartInputContainer = styled.div`
     display: flex;
     border: 0;
     color: ${(props) => props.theme.purple};
+
+    &:hover {
+      color: ${(props) => props.theme['purple-dark']};
+    }
+
+    transition: color 0.2s;
   }
 
   span {

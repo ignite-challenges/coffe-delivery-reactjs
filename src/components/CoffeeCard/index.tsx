@@ -6,6 +6,7 @@ import {
 } from './styles'
 
 import CoffeeImage from '../../assets/products/express-traditional.png'
+
 import { CoffeeCartInput } from '../CoffeeCartInput'
 import { ShoppingCart } from 'phosphor-react'
 

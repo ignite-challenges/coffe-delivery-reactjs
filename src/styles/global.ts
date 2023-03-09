@@ -22,9 +22,12 @@ export const GlobalStyle = createGlobalStyle`
 
   input {
     background: ${(props) => props.theme['base-input']};
+
+    &:focus {
+      outline: transparent;
+      box-shadow: 0 0 0 2px ${(props) => props.theme['yellow-dark']};
+    }
   }
 
-  input:focus {
-    border-color: ${(props) => props.theme['yellow-dark']};
-  }
+ 
 `

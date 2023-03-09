@@ -23,6 +23,7 @@ export const CoffeeContainer = styled.div`
     color: ${(props) => props.theme['base-subtitle']};
     margin-top: 1rem;
     margin-bottom: 0.5rem;
+    text-align: center;
   }
 
   span {
@@ -82,8 +83,7 @@ export const CoffeeFooterContainer = styled.div`
 export const ShoppingCartContainer = styled.div`
   background: ${(props) => props.theme['purple-dark']};
   display: flex;
-  padding: 0 0.5rem;
-  height: 100%;
+  padding: 0.5rem;
   border-radius: 6px;
 
   :hover {
