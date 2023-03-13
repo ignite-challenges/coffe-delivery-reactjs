@@ -13,6 +13,8 @@ import { CoffeeCard } from '../../components/CoffeeCard'
 import HomeBackground from '../../assets/home-background.svg'
 import CoffeImage from '../../assets/coffe-main.png'
 
+import { coffeesData } from './data'
+
 export function Home() {
   return (
     <main>
@@ -56,13 +58,9 @@ export function Home() {
       <ProductsContainer>
         <strong>Nossos cafés</strong>
         <CoffeeCardContainer>
-          <CoffeeCard />
-          <CoffeeCard />
-          <CoffeeCard />
-          <CoffeeCard />
-          <CoffeeCard />
-          <CoffeeCard />
-          <CoffeeCard />
+          {coffeesData.map((coffee) => (
+            <CoffeeCard key={coffee.id} data={coffee} />
+          ))}
         </CoffeeCardContainer>
       </ProductsContainer>
     </main>

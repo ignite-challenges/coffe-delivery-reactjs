@@ -35,12 +35,17 @@ export const CoffeeContainer = styled.div`
   }
 `
 
-export const CoffeeTypeContainer = styled.div`
-  background: ${(props) => props.theme['yellow-light']};
-  padding: 0.25rem 0.5rem;
-  border-radius: 100px;
+export const CoffeeLabelsContainer = styled.div`
   display: flex;
-  align-items: center;
+  gap: 0.25rem;
+
+  div {
+    background: ${(props) => props.theme['yellow-light']};
+    padding: 0.25rem 0.5rem;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+  }
 
   label {
     color: ${(props) => props.theme['yellow-dark']};

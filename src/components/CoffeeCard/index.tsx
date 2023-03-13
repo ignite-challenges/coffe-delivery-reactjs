@@ -1,32 +1,55 @@
 import {
   CoffeeContainer,
   CoffeeFooterContainer,
-  CoffeeTypeContainer,
+  CoffeeLabelsContainer,
   ShoppingCartContainer,
 } from './styles'
-
-import CoffeeImage from '../../assets/products/express-traditional.png'
 
 import { CoffeeCartInput } from '../CoffeeCartInput'
 import { ShoppingCart } from 'phosphor-react'
 
-export function CoffeeCard() {
+import { coffeesData } from '../../pages/Home/data'
+
+interface CoffeCardProps {
+  data: (typeof coffeesData)[0]
+}
+
+export function CoffeeCard({ data }: CoffeCardProps) {
+  function formatCurrency(value: number): string {
+    if (isNaN(value)) {
+      return ''
+    }
+
+    const formattedValue = value.toLocaleString('pt-br', {
+      style: 'currency',
+      currency: 'BRL',
+    })
+
+    return formattedValue.trim().replace('R$', '')
+  }
+
+  const value = formatCurrency(data.value)
+
   return (
     <CoffeeContainer>
       <img
-        src={CoffeeImage}
+        src={data.img}
         alt="Imagem meramente ilustrativa de um copo com café"
       />
-      <CoffeeTypeContainer>
-        <label>tradicional</label>
-      </CoffeeTypeContainer>
-      <h2>Expresso Tradicional</h2>
-      <span>O tradicional café feito com água quente e grãos moídos</span>
+      <CoffeeLabelsContainer>
+        {data.labels.map((label) => (
+          <div key={label}>
+            <label>{label}</label>
+          </div>
+        ))}
+      </CoffeeLabelsContainer>
+      <h2>{data.title}</h2>
+      <span>{data.subtitle}</span>
 
       <CoffeeFooterContainer>
         <p>
           R${` `}
-          <strong>9,90</strong>
+          <strong>{value}</strong>
         </p>
 
         <div>
