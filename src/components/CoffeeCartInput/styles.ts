@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 
-export const CartInputContainer = styled.div`
+export const CartInputContainer = styled.div``
+
+export const CartActionInputContainer = styled.div`
   background: ${(props) => props.theme['base-button']};
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem;
-  /* height: 100%; */
   border-radius: 6px;
 
   svg {
@@ -32,5 +33,23 @@ export const CartInputContainer = styled.div`
     text-align: center;
 
     color: #272221;
+  }
+`
+
+export const ShoppingCartContainer = styled.button`
+  background: ${(props) => props.theme['purple-dark']};
+  display: flex;
+  padding: 0.5rem;
+  border: 0;
+  border-radius: 6px;
+
+  :hover {
+    background: ${(props) => props.theme.purple};
+  }
+
+  transition: background 0.2s;
+
+  svg {
+    color: ${(props) => props.theme.white};
   }
 `

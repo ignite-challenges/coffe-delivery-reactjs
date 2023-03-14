@@ -2,15 +2,13 @@ import {
   CoffeeContainer,
   CoffeeFooterContainer,
   CoffeeLabelsContainer,
-  ShoppingCartContainer,
 } from './styles'
 
 import { CoffeeCartInput } from '../CoffeeCartInput'
-import { ShoppingCart } from 'phosphor-react'
 
 import { coffeesData } from '../../pages/Home/data'
 
-interface CoffeCardProps {
+export interface CoffeCardProps {
   data: (typeof coffeesData)[0]
 }
 
@@ -52,12 +50,7 @@ export function CoffeeCard({ data }: CoffeCardProps) {
           <strong>{value}</strong>
         </p>
 
-        <div>
-          <CoffeeCartInput />
-          <ShoppingCartContainer>
-            <ShoppingCart size={22} weight={'fill'} />
-          </ShoppingCartContainer>
-        </div>
+        <CoffeeCartInput data={data} />
       </CoffeeFooterContainer>
     </CoffeeContainer>
   )

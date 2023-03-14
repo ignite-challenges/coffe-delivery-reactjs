@@ -84,20 +84,3 @@ export const CoffeeFooterContainer = styled.div`
     gap: 0.5rem;
   }
 `
-
-export const ShoppingCartContainer = styled.div`
-  background: ${(props) => props.theme['purple-dark']};
-  display: flex;
-  padding: 0.5rem;
-  border-radius: 6px;
-
-  :hover {
-    background: ${(props) => props.theme.purple};
-  }
-
-  transition: background 0.2s;
-
-  svg {
-    color: ${(props) => props.theme.white};
-  }
-`

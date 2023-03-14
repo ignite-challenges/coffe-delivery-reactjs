@@ -7,6 +7,7 @@ import {
 } from 'phosphor-react'
 
 import CoffeeImage from '../../assets/products/express-traditional.png'
+import { CoffeeCartCheckout } from '../../components/CoffeeCartCheckout'
 
 import { CoffeeCartInput } from '../../components/CoffeeCartInput'
 
@@ -108,13 +109,7 @@ export function Checkout() {
                 <p>Expresso Tradicional</p>
                 <strong>R$ 9,90</strong>
               </ProductCartValueContainer>
-              <ProductCartActionsContainer>
-                <CoffeeCartInput />
-                <button>
-                  <Trash weight="regular" />
-                  REMOVER
-                </button>
-              </ProductCartActionsContainer>
+              <CoffeeCartCheckout />
             </ProductCartContainer>
           </ProductsCartContainer>
           <ValuesInformationContainer>

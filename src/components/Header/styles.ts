@@ -47,3 +47,27 @@ export const CartContainer = styled.div`
     background: ${(props) => props.theme.yellow};
   }
 `
+
+export const AmountProductCartContainer = styled.div`
+  background: ${(props) => props.theme['yellow-dark']};
+  border-radius: 50%;
+
+  height: 1.25rem;
+  width: 1.25rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  right: 9.4rem;
+  top: 1.8rem;
+
+  p {
+    margin-top: 0.114rem;
+    margin-left: 0.1rem;
+    font-size: 0.875rem;
+    color: ${(props) => props.theme.white};
+    font-family: 'Roboto', sans-serif;
+  }
+`
