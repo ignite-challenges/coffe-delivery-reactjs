@@ -15,6 +15,7 @@ import { CartContext } from '../../contexts/CartContext'
 
 export function Header() {
   const { cartState } = useContext(CartContext)
+
   const hasProductsInCart = cartState.products.length > 0
 
   return (

@@ -73,38 +73,43 @@ export const PaymentsButtonContainer = styled.div`
   flex: 1;
   align-items: center;
   justify-content: space-between;
+`
 
-  button {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
+interface SelectPaymentButtonProps {
+  selected: boolean
+}
 
-    gap: 0.75rem;
-    background: ${(props) => props.theme['base-button']};
-    border-radius: 6px;
-    border: 0;
-    margin-top: 2rem;
+export const SelectPaymentButton = styled.button<SelectPaymentButtonProps>`
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.6;
 
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 400;
-    color: ${(props) => props.theme['base-text']};
-    line-height: 1.6;
+  color: ${({ theme }) => theme['base-text']};
+  background: ${({ theme, selected }) =>
+    theme[selected ? 'purple-light' : 'base-button']};
+  border: 1px solid
+    ${({ theme, selected }) => theme[selected ? 'purple' : 'base-button']};
+  border-radius: 6px;
 
-    &:hover {
-      background: ${(props) => props.theme['base-hover']};
+  &:hover {
+    background: ${({ theme, selected }) =>
+      theme[selected ? 'purple-light' : 'base-hover']};
 
-      svg {
-        color: ${(props) => props.theme['purple-dark']};
-      }
+    svg {
+      color: ${({ theme }) => theme['purple-dark']};
     }
-
-    transition: background 0.2s;
   }
 
-  svg {
-    color: ${(props) => props.theme.purple};
+  transition: background 0.2s;
 
+  svg {
+    color: ${({ theme }) => theme.purple};
     transition: color 0.2s;
   }
 `
@@ -148,6 +153,10 @@ export const ValuesInformationContainer = styled.div`
       background: ${(props) => props.theme['yellow-dark']};
     }
 
+    &:disabled {
+      background-color: ${(props) => props.theme['base-subtitle']};
+    }
+
     transition: background 0.2s;
   }
 `
@@ -167,42 +176,6 @@ export const ProductsCartContainer = styled.div`
   }
 `
 
-export const ProductCartActionsContainer = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  gap: 0.5rem;
-
-  button {
-    display: flex;
-    border: 0;
-    background-color: ${(props) => props.theme['base-button']};
-    border-radius: 6px;
-    padding: 0.5rem;
-    gap: 0.25rem;
-
-    color: ${(props) => props.theme['base-text']};
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 400;
-    align-items: center;
-
-    &:hover {
-      background-color: ${(props) => props.theme['base-hover']};
-
-      svg {
-        color: ${(props) => props.theme['purple-dark']};
-      }
-    }
-
-    svg {
-      color: ${(props) => props.theme.purple};
-
-      transition: color 0.2s;
-    }
-
-    transition: background 0.2s;
-  }
-`
 export const ProductCartValueContainer = styled.div`
   display: flex;
   align-items: center;

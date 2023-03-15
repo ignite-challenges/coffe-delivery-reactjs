@@ -7,25 +7,13 @@ import {
 import { CoffeeCartInput } from '../CoffeeCartInput'
 
 import { coffeesData } from '../../pages/Home/data'
+import { formatCurrency } from '../../utils/functions'
 
 export interface CoffeCardProps {
   data: (typeof coffeesData)[0]
 }
 
 export function CoffeeCard({ data }: CoffeCardProps) {
-  function formatCurrency(value: number): string {
-    if (isNaN(value)) {
-      return ''
-    }
-
-    const formattedValue = value.toLocaleString('pt-br', {
-      style: 'currency',
-      currency: 'BRL',
-    })
-
-    return formattedValue.trim().replace('R$', '')
-  }
-
   const value = formatCurrency(data.value)
 
   return (

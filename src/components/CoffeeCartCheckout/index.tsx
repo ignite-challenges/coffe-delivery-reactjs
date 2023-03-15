@@ -1,19 +1,42 @@
 import { Minus, Plus, Trash } from 'phosphor-react'
-import { useState } from 'react'
+import { FormEvent, useContext } from 'react'
+import { CartContext } from '../../contexts/CartContext'
 
 import { CartActionInputContainer, ProductCartActionsContainer } from './styles'
 
-export function CoffeeCartCheckout() {
-  const [updateAmount, setUpdateAmountAmount] = useState(1)
+interface CoffeeCartCheckoutProps {
+  id: number
+  amount: number
+}
+
+export function CoffeeCartCheckout({ amount, id }: CoffeeCartCheckoutProps) {
+  const {
+    DecrementCoffeAmountCart,
+    RemoveCoffeFromCart,
+    IncrementCoffeAmountCart,
+  } = useContext(CartContext)
+
+  function handleIncrementCoffeAmount() {
+    IncrementCoffeAmountCart(id)
+  }
+
+  function handleDecrementCoffeAmount() {
+    DecrementCoffeAmountCart(id)
+  }
+
+  function handleRemoveCoffe(event: FormEvent) {
+    event.preventDefault()
+    RemoveCoffeFromCart(id)
+  }
 
   return (
     <ProductCartActionsContainer>
       <CartActionInputContainer>
-        <Minus size={14} weight="bold" />
-        <span>{updateAmount}</span>
-        <Plus size={14} weight="bold" />
+        <Minus size={14} weight="bold" onClick={handleDecrementCoffeAmount} />
+        <span>{amount}</span>
+        <Plus size={14} weight="bold" onClick={handleIncrementCoffeAmount} />
       </CartActionInputContainer>
-      <button>
+      <button onClick={handleRemoveCoffe}>
         <Trash weight="regular" size={16} />
         REMOVER
       </button>
